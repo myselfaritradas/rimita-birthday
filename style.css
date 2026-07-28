@@ -1,0 +1,310 @@
+/* Custom Properties - Sunflower Theme */
+:root {
+    --sunflower-bg: #FFFDF0; /* very light warm yellow */
+    --sunflower-yellow: #FFD54F;
+    --sunflower-bright: #FFC107;
+    --sunflower-dark: #F57F17;
+    --leaf-green: #558B2F;
+    --text-dark: #3E2723; /* warm dark brown instead of black */
+    --text-muted: #6D4C41;
+    
+    --font-cursive: 'Dancing Script', cursive; /* Luxurious */
+    --font-cute: 'Quicksand', sans-serif; /* Cute */
+    --font-bengali-cute: 'Baloo Da 2', sans-serif; /* Cute for Bengali */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--sunflower-bg);
+    color: var(--text-dark);
+    font-family: var(--font-cute);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- Typography Utilities ---------------- */
+.cursive-title {
+    font-family: var(--font-cursive);
+    font-weight: 700;
+    color: var(--sunflower-dark);
+}
+
+.cursive-main-text {
+    font-family: var(--font-cursive);
+    font-size: 2rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.cute-font {
+    font-family: var(--font-cute);
+}
+
+/* ---------------- Overlay ---------------- */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+.overlay-content {
+    text-align: center;
+    animation: fadeIn 2s ease forwards;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(245, 127, 23, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.overlay-content .cursive-title {
+    font-size: 5rem;
+    color: var(--text-dark);
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.7);
+    margin-bottom: 0.5rem;
+}
+
+.cute-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+.enter-btn {
+    background: var(--sunflower-dark);
+    border: none;
+    color: #fff;
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(245, 127, 23, 0.4);
+}
+
+.enter-btn:hover {
+    background: #fff;
+    color: var(--sunflower-dark);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* ---------------- Main Layout ---------------- */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transition: opacity 1.5s ease-in;
+}
+
+/* ---------------- Hero Section (Parallax) ---------------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #FFFDF0, #FFF59D);
+}
+
+.parallax-layer {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.layer-back { background-image: url('./assets/sunflower-back.png'); z-index: 1; opacity: 0.5; }
+.layer-mid { background-image: url('./assets/sunflower-mid.png'); z-index: 2; opacity: 0.7; }
+.layer-front { background-image: url('./assets/sunflower-front.png'); z-index: 4; opacity: 0.9; }
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(245, 127, 23, 0.15);
+    backdrop-filter: blur(5px);
+    border: 2px solid rgba(255,255,255,0.9);
+}
+
+.cute-pre-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--sunflower-dark);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.huge-title {
+    font-size: 6rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 4px 0px rgba(255, 255, 255, 0.8);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    text-align: center;
+    color: var(--sunflower-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.scroll-indicator .line {
+    width: 2px;
+    height: 40px;
+    background-color: var(--sunflower-dark);
+    animation: stretch 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top;
+    border-radius: 2px;
+}
+
+@keyframes stretch {
+    0% { transform: scaleY(0); }
+    50% { transform: scaleY(1); }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ---------------- Story Section ---------------- */
+.story-section {
+    padding: 4rem 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* ---------------- Image Card ---------------- */
+.image-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 1s ease;
+    border: 3px solid var(--sunflower-yellow);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.image-card.show-element {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.image-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.image-caption {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 1.4rem; /* Slightly larger for clear Bengali reading */
+    font-family: var(--font-bengali-cute);
+}
+
+/* ---------------- Wish Section ---------------- */
+.wish-card {
+    background: linear-gradient(135deg, #FFF9C4, #FFF59D);
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(245, 127, 23, 0.15);
+    border: 2px dashed var(--sunflower-dark);
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wish-card.show-element {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.wish-card h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--sunflower-dark);
+}
+
+.wish-card p {
+    font-size: 2.2rem; /* Luxurious main text needs to be large for cursive */
+}
+
+/* ---------------- Footer ---------------- */
+.footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--sunflower-yellow);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .huge-title { font-size: 4rem; }
+    .overlay-content .cursive-title { font-size: 4rem; }
+    .wish-card h2 { font-size: 2.5rem; }
+    .wish-card p { font-size: 1.8rem; }
+    .cursive-main-text { font-size: 1.5rem; }
+}

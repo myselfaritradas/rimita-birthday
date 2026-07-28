@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Rimita!</title>
+    <meta name="description" content="A beautiful birthday celebration for Rimita.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cursive font for luxurious main text and headings, Cute font (Quicksand/Baloo Da 2) for other text -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Entrance Overlay -->
+    <div id="entrance-overlay" class="overlay">
+        <div class="overlay-content">
+            <h1 class="cursive-title">Rimita</h1>
+            <p class="cute-subtitle">Your Sunflower Celebration</p>
+            <p class="cute-subtitle">from your <b>bodddddda</b>!</p>
+            <button id="enter-btn" class="enter-btn cute-font">
+                <span>Enter</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="./assets/bg-tune.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Main Content -->
+    <main id="main-content" class="hidden">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <!-- Fallback to CSS yellow gradient if parallax images are missing -->
+            <div class="parallax-layer layer-back"></div>
+            <div class="parallax-layer layer-mid"></div>
+
+            <div class="hero-content">
+                <p class="cute-pre-title">Happy Birthday</p>
+                <h1 class="cursive-title huge-title">Rimita</h1>
+                <p class="cursive-main-text">Never Lose the Sunflower in You</p>
+            </div>
+
+            <div class="parallax-layer layer-front"></div>
+            <div class="scroll-indicator">
+                <span class="cute-font">Scroll to explore</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Dynamic Story Section (Images and Wishes) -->
+        <section class="story-section" id="story-section">
+            <div id="story-container" class="story-container">
+                <!-- Javascript will inject the images and wishful texts here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="cute-font">Made with lots of love & sunflowers for Rimita 🌻</p>
+            <small>by your forever bodda!</small>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
